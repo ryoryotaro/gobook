@@ -1,0 +1,4 @@
+https://qiita.com/tchnkmr/items/b686adc4a7e144d48755
+https://gopherdojo.org/studyroom/
+https://httpbin.org/delay/5
+https://go.dev/doc/
