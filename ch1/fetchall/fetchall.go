@@ -48,13 +48,15 @@ func main() {
 		fmt.Fprintf(os.Stderr, "ファイル読み込みエラー: %v\n", err)
 		os.Exit(1)
 	}
-
+	//fetch関数に取得依頼
 	for _, url := range urls {
 		go fetch(url, ch)
 	}
+	//その結果を待って、来たら出力する
 	for range urls {
 		fmt.Println(<-ch)
 	}
+	//最終的な結果を出力
 	fmt.Printf("%.2fs elapsed\n", time.Since(start).Seconds())
 	// 出力をファイルに書き込む
 	fmt.Fprintf(outputFile, "%.2fs elapsed\n", time.Since(start).Seconds())
